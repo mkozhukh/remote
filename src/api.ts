@@ -1,0 +1,3 @@
+/*
+    getAPI methods were moved to server.ts and service.ts
+*/
