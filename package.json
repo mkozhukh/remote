@@ -1,0 +1,41 @@
+{
+	"name": "remote-client",
+	"version": "0.0.1",
+	"description": "js rpc client",
+	"main": "dist/remote.js",
+	"module": "dist/remote.es6.js",
+	"types": "dist/types/remote.d.ts",
+	"author": "Maksim Kozhukh",
+	"license": "MIT",
+	"scripts": {
+		"test": "yarn build && yarn mocha",
+		"build": "yarn rollup -c rollup.config.js",
+		"lint": "yarn eslint ./src --ext .ts,.js",
+		"dist": "yarn build --config-dist",
+		"watch": "yarn rollup -c rollup.config.js -w"
+	},
+	"files": [
+		"dist"
+	],
+	"devDependencies": {
+		"@rollup/plugin-typescript": "^4.0.0",
+		"@typescript-eslint/eslint-plugin": "^3.2.0",
+		"@typescript-eslint/parser": "^3.2.0",
+		"chai": "^4.2.0",
+		"eslint": "^7.2.0",
+		"eslint-config-prettier": "^6.11.0",
+		"husky": "^4.2.3",
+		"mocha": "^6.2.2",
+		"prettier": "^1.19.1",
+		"pretty-quick": "^2.0.1",
+		"rollup": "^1.31.0",
+		"rollup-plugin-terser": "^5.2.0",
+		"tslib": "^1.10.0",
+		"typescript": "^3.7.5"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	}
+}
